@@ -6,28 +6,30 @@ document.getElementById("hairButton").addEventListener("click", () => {
 });
 
 const hcOptions = document.getElementById("hcOptions");
-const openButton = document.getElementById("hairColor");
-const closeButton = document.getElementById("closeHC");
-openButton.addEventListener("click", () => {
+const openHC = document.getElementById("hairColor");
+const closeHC = document.getElementById("closeHC");
+openHC.addEventListener("click", () => {
   if (hairOptions.open) {
-    console.log('hair options open');
     hcOptions.showModal();
-  } else {
-    hcOptions.close();
   }
 });
+closeHC.addEventListener("click", () => hcOptions.close());
+ 
 //closeButton.addEventListener("click", () => { console.log('clicked close'); hcOptions.close(); });
 
 //Bangs
 const bangs1btn = document.getElementById("bangs1btn");
 bangs1btn.addEventListener("click", showBangs1);
 function showBangs1() {
+  const dollBangs = document.querySelector("#dollBangs").style.display;
   const bangs1 = document.querySelector("#bangs1").style.display;
   const bangs2 = document.querySelector("#bangs2").style.display;
   const bangs3 = document.querySelector("#bangs3").style.display;
   const bangs4 = document.querySelector("#bangs4").style.display;
   
-  if (bangs2 === "block") {
+  if (dollBangs === "block") {
+    document.querySelector("#dollBangs").style.display = "none";
+  }if (bangs2 === "block") {
     document.querySelector("#bangs2").style.display = "none";
   }if (bangs3 === "block") {
     document.querySelector("#bangs3").style.display = "none";
@@ -41,12 +43,15 @@ function showBangs1() {
 const bangs2btn = document.getElementById("bangs2btn");
 bangs2btn.addEventListener("click", showBangs2);
 function showBangs2() {
+  const dollBangs = document.querySelector("#dollBangs").style.display;
   const bangs1 = document.querySelector("#bangs1").style.display;
   const bangs2 = document.querySelector("#bangs2").style.display;
   const bangs3 = document.querySelector("#bangs3").style.display;
   const bangs4 = document.querySelector("#bangs4").style.display;
   
-  if (bangs1 === "block") {
+  if (dollBangs === "block") {
+    document.querySelector("#dollBangs").style.display = "none";
+  }if (bangs1 === "block") {
     document.querySelector("#bangs1").style.display = "none";
   }if (bangs3 === "block") {
     document.querySelector("#bangs3").style.display = "none";
@@ -60,12 +65,15 @@ function showBangs2() {
 const bangs3btn = document.getElementById("bangs3btn");
 bangs3btn.addEventListener("click", showBangs3);
 function showBangs3() {
+  const dollBangs = document.querySelector("#dollBangs").style.display;
   const bangs1 = document.querySelector("#bangs1").style.display;
   const bangs2 = document.querySelector("#bangs2").style.display;
   const bangs3 = document.querySelector("#bangs3").style.display;
   const bangs4 = document.querySelector("#bangs4").style.display;
   
-  if (bangs1 === "block") {
+  if (dollBangs === "block") {
+    document.querySelector("#dollBangs").style.display = "none";
+  }if (bangs1 === "block") {
     document.querySelector("#bangs1").style.display = "none";
   }if (bangs2 === "block") {
     document.querySelector("#bangs2").style.display = "none";
@@ -80,12 +88,15 @@ function showBangs3() {
 const bangs4btn = document.getElementById("bangs4btn");
 bangs4btn.addEventListener("click", showBangs4);
 function showBangs4() {
+  const dollBangs = document.querySelector("#dollBangs").style.display;
   const bangs1 = document.querySelector("#bangs1").style.display;
   const bangs2 = document.querySelector("#bangs2").style.display;
   const bangs3 = document.querySelector("#bangs3").style.display;
   const bangs4 = document.querySelector("#bangs4").style.display;
   
-  if (bangs1 === "block") {
+  if (dollBangs === "block") {
+    document.querySelector("#dollBangs").style.display = "none";
+  }if (bangs1 === "block") {
     document.querySelector("#bangs1").style.display = "none";
   }if (bangs2 === "block") {
     document.querySelector("#bangs2").style.display = "none";
@@ -465,6 +476,7 @@ function showMouth5() {
   else
     document.querySelector("#mouth5").style.display = "none";
 }
+
 //skin-tone options
 document.getElementById("skinButton").addEventListener("click", () => {
   const skinToneOptions = document.getElementById("skinToneOptions");
@@ -539,7 +551,9 @@ function skinTone52() {
 // color selection
 /*const c11 = document.getElementById("c11");
 c11.addEventListener("click", color11);
+console.log("c11 clicked");
 function color11() {
+  dollBangs.style.fill='#560100';
   bangs1.style.fill='#560100'; 
   bangs2.style.fill='#560100';
   bangs3.style.fill='#560100';
