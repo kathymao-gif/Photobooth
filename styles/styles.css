@@ -3,7 +3,6 @@
 /* ===== NEXT WRITE GLOBAL STYLES, THEN USE MEDIA QUERIES FOR LAYOUT/STYLE ADJUSTMENTS ===== */
 /* ===== STARTER CSS BELOW FOR body AND p IS JUST AN EXAMPLE... YOU MAY DELETE IT ===== */
 
-
 body {
     min-height: 100vh;
     background: #F0E7C7;
@@ -11,94 +10,219 @@ body {
 }
 
 
-
 nav {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: space-evenly;
-    margin: .5em;
+    margin: 0;
     color: #560100;
     background-color: #D55574;
-    max-height: 5vh;
+    min-height: 10vh;
+    max-width: auto;
+    padding-bottom: 0.5em;
+}
+nav h1 {
+    max-height: 15vh;
+    margin: 0;
+    font-size:larger;
 }
 
-nav h1 {
-    font-size: inline;
-}
 .container{
     display: grid;
     grid-template-columns: 22% 22% auto;
     grid-template-areas: "menu sidebar content";
-    padding: .5em;
     column-gap: 1px;
-    align-items: center;
 }
-
 .container div {
-    max-height: 100vh;
-    min-height:fit-content;
+    max-height: 85vh;
+    max-width: 100vw;
     margin: 0;
 }
 
-
-h1{
-    font-family: lobster, cursive;
-    text-size-adjust: inherit;
-}
-
-.container div.menu {
+/* initial selection of customization options */
+.menu-open {
+    display: grid;
     grid-area: menu;
     border: 1px solid #560100;
-    column-height: 90vh;
-}
-
-.container div.sidebar {
-    grid-area: sidebar;
-    border: 1px solid #560100;
-    column-height: 90vh;
-}
-
-.container div.content {
-    grid-area: content;
+    column-height: 85vh;
     justify-content: center;
     align-items: center;
-    border: 1px solid #560100;
-    column-height: 90vh;
 }
-
-button {
-    margin-top: 2px;
+.menu-open button {
+    margin: 2px 0;
     font-family: merriwether sans, sans-serif;
-    color: #560100
+    background-color:#D55574;
+    color: #560100;
+    border: 0;
     border-radius: 10px;
-    padding: 1em 2em;
+    padding: .75rem 2.5rem;
     font-size: larger;
     width: 20vw;
 }
 
+.sidebar {
+    display: grid;
+    grid-area: sidebar;
+    grid-template-rows: 1fr 1fr 1fr;
+    border: 1px solid #560100;
+    column-height: 85vh;
+    column-width: 22vw;
+}
+/* color selection */
+table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding:0;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+.stPalette {
+    border: 1px solid #560100;
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+.skinToneOptions {
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    height: 85vh;
+    width: 22%;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+
+dialog table td,
+table#paletteEC td,
+table#paletteHC td {
+    border: 1px solid #560100;
+    width: 20%;
+    height: 10%;
+    overflow: hidden;
+}
+
+.hcOptions, .ecOptions {
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    height: 85vh;
+    width: 22%;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.hcOptions, .ecOptions {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+.stOptions {
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  top:0;
+  width:53px;
+  height:53px;
+  margin:10px 15px;
+  cursor:pointer;
+  border-radius:10px;
+}
+
+.colorChange {
+    height: 100%;
+    width: 16%;
+    border-radius: 0%;
+}
+
+/* object selection */
+dialog {
+    grid-area: sidebar;
+    margin: 0vh 22vw;
+    max-height: 80vh;
+    max-width: 19vw;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    overflow-y: scroll;
+}
+
+dialog button {
+    margin: .5em;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+    width:5vw;
+    background-color:#D55574;
+    border-radius: 2em;
+}
+
+dialog div{
+    justify-content: center;
+    align-items: center;
+    margin:0 10px;
+    max-height: 10%;
+}
+
+.dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+.dialog-header h2{
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+#hairColor {
+    padding: 0.5rem 1rem;
+    width: auto;
+    font-size: 1rem;
+}
+
+
+dialog img {
+    width: 100%;
+    height: auto;
+}
+svg {
+    display: grid;
+    grid-area: content;
+    height:85vh;
+}
+
+div .doll {
+    grid-area: content;
+    height: 85vh;
+}
+
+.color {
+  flex: 0 0 auto;
+  top:0;
+  width:53px;
+  height:53px;
+  margin:15px 10px;
+  cursor:pointer;
+  border-radius:10px;
+}
+
+
+/* content section */
+.content {
+    display: grid;
+    border: 5px solid #560100;
+    grid-area: content;
+    justify-content: center;
+    align-items: center;
+    max-height: 85vh;
+    background-color: #fefefe;
+}
+
 button:hover {
-    box-shadow: .5em .5em 1em #D55574;
+    border:3px solid #560100;
 }
-
-#skin {
-    background-repeat: no-repeat;
-    position: absolute;
-    margin-left: 1em;
-}
-#hair {
-    position: absolute;
-    background-repeat: no-repeat;
-}
-
-#eyes {
-    background-repeat: no-repeat;
-    position: absolute;
-    margin-left: 1em;
-}
-
-#mouth {
-    background-repeat: no-repeat;
-    position: absolute;
-    margin-left: 1em;
-}
-
