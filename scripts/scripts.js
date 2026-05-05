@@ -192,7 +192,7 @@ if (paletteEC) {
       const eyeColor = table.style.background;
 
       // Set the fill color for all eye elements
-      const eyeElements = ['eyes', 'rightEye2', 'leftEye3'];
+      const eyeElements = ['iris', 'rightEye2', 'leftEye3'];
       eyeElements.forEach(elementId => {
         const element = document.getElementById(elementId);
         if (element) {
